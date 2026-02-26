@@ -1,0 +1,371 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Share2care Foundation Original Colors */
+    --primary-red: 112 14 18;
+    --dark-red: 112 54 58;
+    --accent-yellow: 255 255 153;
+    --text-black: 0 0 0;
+    --text-white: 255 255 255;
+
+    /* Social Media Colors */
+    --facebook-blue: 59 89 152;
+    --instagram-pink: 234 44 89;
+    --twitter-black: 0 0 0;
+    --youtube-red: 168 36 0;
+
+    /* Standard Colors for Components */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 112 14 18;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 255 255 153;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 112 14 18;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 112 14 18;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 255 255 153;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 112 14 18;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+}
+
+/* Share2care Foundation Specific Styles */
+.share2care-header {
+  background-color: rgb(var(--dark-red));
+  color: rgb(var(--text-white));
+  padding: 5px 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.share2care-nav {
+  background-color: rgb(var(--text-white));
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.share2care-primary {
+  background-color: rgb(var(--primary-red));
+  color: rgb(var(--text-white));
+}
+
+.share2care-showpage {
+  background-color: rgb(var(--dark-red));
+  color: rgb(var(--text-white));
+}
+.share2care-primary-text {
+  color: rgb(var(--primary-red));
+}
+
+.share2care-accent {
+  background-color: rgb(var(--accent-yellow));
+  color: rgb(var(--text-black));
+}
+
+.share2care-dark {
+  background-color: rgb(var(--dark-red));
+  color: rgb(var(--text-white));
+}
+
+/* Custom Button Styles */
+.btn-share2care {
+  background-color: rgb(var(--primary-red));
+  color: rgb(var(--text-white));
+  padding: 4.2px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-share2care:hover {
+  background-color: rgb(var(--dark-red));
+  transform: translateY(-1px);
+}
+
+.btn-share2care-outline {
+  background-color: transparent;
+  color: rgb(var(--primary-red));
+  border: 2px solid rgb(var(--primary-red));
+  padding: 4.2px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-share2care-outline:hover {
+  background-color: rgb(var(--primary-red));
+  color: rgb(var(--text-white));
+}
+
+/* Social Media Icons */
+.social-facebook {
+  color: rgb(var(--facebook-blue));
+}
+.social-instagram {
+  color: rgb(var(--instagram-pink));
+}
+.social-twitter {
+  color: rgb(var(--twitter-black));
+}
+.social-youtube {
+  color: rgb(var(--youtube-red));
+}
+
+/* Card Styles */
+.share2care-card {
+  background-color: rgb(var(--text-white));
+  border: 1px solid #e5e7eb;
+  border-radius: 24px !important;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.share2care-card:hover {
+  box-shadow: 0 4px 12px rgba(var(--primary-red), 0.15);
+  transform: translateY(-2px);
+}
+
+/* Highlighted Card */
+.highlighted-card {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--accent-yellow)) 0%,
+    rgba(var(--accent-yellow), 0.8) 100%
+  );
+  border: 2px solid rgb(var(--primary-red));
+  position: relative;
+}
+
+.highlighted-card::before {
+  content: "⭐ FEATURED";
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  background-color: rgb(var(--primary-red));
+  color: rgb(var(--text-white));
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+  background-color: rgb(var(--text-white));
+  border-right: 1px solid #e5e7eb;
+  min-height: calc(100vh - 200px);
+  padding: 20px;
+}
+
+/* Message Styles */
+.message-notification {
+  background-color: rgba(var(--primary-red), 0.1);
+  border-left: 4px solid rgb(var(--primary-red));
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 4px;
+}
+
+/* Admin Message Badge */
+.admin-message {
+  background-color: rgb(var(--primary-red));
+  color: rgb(var(--text-white));
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .share2care-header {
+    font-size: 12px;
+    padding: 0px 14px;
+  }
+
+  .share2care-nav {
+    padding: 0px 0px;
+  }
+
+  .filter-sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    z-index: 50;
+    transition: left 0.3s ease;
+  }
+
+  .filter-sidebar.open {
+    left: 0;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.4s ease-out;
+}
+
+/* Footer Styles */
+.share2care-footer {
+  background-color: rgb(var(--dark-red));
+  color: rgb(var(--text-white));
+  padding: 25px 0;
+}
+
+.footer-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.footer-link {
+  color: rgb(var(--accent-yellow));
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: rgb(var(--text-white));
+  text-decoration: underline;
+}
+
+/* Line Clamp Utilities */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* In your global CSS file or a CSS module: */
+
+::-webkit-scrollbar {
+  width: 8px; /* Slim width */
+  height: 8px; /* For horizontal scrollbar if needed */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light track background */
+  border-radius: 9999px; /* Fully rounded ends */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bebebe; /* Indigo-600 from Tailwind colors */
+  border-radius: 9999px;
+  border: 2px solid #f1f1f1; /* Creates padding around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6b6969; /* Indigo-700 on hover */
+}
+
+li:hover .time-sharing-submenu {
+  display: block;
+}
